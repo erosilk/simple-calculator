@@ -36,23 +36,23 @@ var value2 = 0;
 function doTheMath(){
     switch(currentOperation){
         case "×":
-            visorHistory.innerHTML = value1 + "×" + value2 + "=" + value1 * value2;
-            value1 = value1 * value2;
+            visorHistory.innerHTML = value1 + "×" + value2 + "=" + (Math.round((value1 * value2) * 100) / 100);
+            value1 = (Math.round((value1 * value2) * 100) / 100);
             afterProcess()
             break;
         case "÷":
-            visorHistory.innerHTML = value1 + "÷" + value2 + "=" + value1 / value2;
-            value1 = value1 / value2;
+            visorHistory.innerHTML = value1 + "÷" + value2 + "=" + (Math.round((value1 / value2) * 100) / 100);
+            value1 = (Math.round((value1 / value2) * 100) / 100);
             afterProcess()
             break;
         case "+":
-            visorHistory.innerHTML = value1 + "+" + value2 + "=" + (value1*1 + value2*1);
-            value1 = value1*1 + value2*1;
+            visorHistory.innerHTML = value1 + "+" + value2 + "=" + (Math.round((value1*1 + value2*1) * 100) / 100);
+            value1 = (Math.round((value1*1 + value2*1) * 100) / 100);
             afterProcess()
             break;
         case "-":
-            visorHistory.innerHTML = value1 + "-" + value2 + "=" + (value1 - value2);
-            value1 = value1 - value2;
+            visorHistory.innerHTML = value1 + "-" + value2 + "=" + (Math.round((value1 - value2) * 100) / 100);
+            value1 = (Math.round((value1 - value2) * 100) / 100);
             afterProcess()
             break;
         default:
@@ -138,7 +138,7 @@ function afterProcess(){
             } else {
             currentOperation = ""
             value2 = 0;
-            visorCurrent.innerHTML = value1;
+            visorCurrent.innerHTML = Math.round(value1 * 100) / 100;
             currentValue = [];
             }
 }
